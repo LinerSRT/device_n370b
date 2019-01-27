@@ -190,3 +190,6 @@ $(call inherit-product-if-exists, vendor/mediatek/libs/$(MTK_TARGET_PROJECT)/dev
 #A-Go
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+#Using prebuild audio.primary.mt6737m.so and audio.primary.default.so for correct working extSpeaker
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/audio.primary.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.default.so
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/audio.primary.mt6737m.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.mt6737m.so
