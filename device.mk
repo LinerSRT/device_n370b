@@ -179,9 +179,6 @@ ifeq (yes,$(strip $(MTK_GMO_RAM_OPTIMIZE)))
 endif
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/common/overlay/navbar
 
-ifeq ($(strip $(OPTR_SPEC_SEG_DEF)),NONE)
-    PRODUCT_PACKAGES += DangerDash
-endif
 
 $(call inherit-product, device/mediatek/mt6735/device.mk)
 
@@ -191,5 +188,5 @@ $(call inherit-product-if-exists, vendor/mediatek/libs/$(MTK_TARGET_PROJECT)/dev
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 #Using prebuild audio.primary.mt6737m.so and audio.primary.default.so for correct working extSpeaker
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/audio.primary.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.default.so
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/audio.primary.mt6737m.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.mt6737m.so
+#PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/audio.primary.default.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.default.so
+#PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/audio.primary.mt6737m.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.mt6737m.so
